@@ -1,0 +1,1 @@
+{"version":3,"file":"UserResource.js","sourceRoot":"","sources":["../../src/resources/UserResource.ts"],"names":[],"mappings":";;;;;AAAA,kEAA0C;AAE1C,MAAqB,YAAa,SAAQ,sBAAY;IAC3C,OAAO;QACV,OAAO;YACH,KAAK,EAAE,IAAI,CAAC,KAAK;YACjB,QAAQ,EAAE,IAAI,CAAC,QAAQ;YACvB,OAAO,EAAE,IAAI,CAAC,OAAO;YACrB,EAAE,EAAE,IAAI,CAAC,GAAG;SACf,CAAC;IACN,CAAC;CACJ;AATD,+BASC"}
