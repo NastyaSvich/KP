@@ -1,12 +1,12 @@
 import { combineReducers } from "redux"
-import films from "./films"
+import videos from "./videos"
 import message from "./message"
 import user from "./user"
-import currentFilm from "./currentFilm"
+import currentVideo from "./currentVideo"
 
 export default combineReducers({
-  films,
+  videos,
   message,
   user,
-  currentFilm
+  currentVideo
 })
