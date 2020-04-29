@@ -1,13 +1,13 @@
 import BaseCollectionResource from "./BaseCollectionResource";
-import FeedbackResource from "./FeedbackResource";
+import RolikResource from "./RolikResource";
 
 export default class RolikCollectionResource extends BaseCollectionResource {
-    protected innerResource = FeedbackResource;
+    protected innerResource = RolikResource;
 
     uncover() {
         return {
             data: this.uncoverItems(),
-        ...this.params
+            ...this.params
         }
     }
 }
