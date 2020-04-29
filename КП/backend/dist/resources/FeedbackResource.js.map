@@ -1,0 +1,1 @@
+{"version":3,"file":"FeedbackResource.js","sourceRoot":"","sources":["../../src/resources/FeedbackResource.ts"],"names":[],"mappings":";;;;;AAAA,kEAA0C;AAE1C,MAAqB,gBAAiB,SAAQ,sBAAY;IAC/C,OAAO;QACV,OAAO;YACH,IAAI,EAAE,IAAI,CAAC,IAAI;YACf,IAAI,EAAE,IAAI,CAAC,IAAI;YACf,QAAQ,EAAE,IAAI,CAAC,QAAQ;YACvB,EAAE,EAAE,IAAI,CAAC,EAAE;SACd,CAAC;IACN,CAAC;CACJ;AATD,mCASC"}
