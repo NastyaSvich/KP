@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
-import { getVideo, rateVideo, deleteVideo } from "../../actions"
+import { getRolik, rateRolik, deleteRolik } from "../../actions"
 
 import { withStyles } from "@material-ui/core/styles"
 import {
@@ -41,7 +41,7 @@ const styles = theme => ({
   }
 })
 
-const VideoPage = props => {
+const RolikPage = props => {
   const [deleted, setDeleted] = useState(false)
   const [rating, setRating] = useState(0)
   const [feedback, setFeedback] = useState("")
@@ -54,18 +54,18 @@ const VideoPage = props => {
     year,
     feedbacks,
     id
-  } = props.currentVideo
+  } = props.currentRolik
 
   const {
     classes: { cardMedia, textGrid },
-    getVideo,
+    getRolik,
     match,
     classes
   } = props
 
   useEffect(() => {
-    getVideo(match.params.id)
-  }, [getVideo, match])
+    getRolik(match.params.id)
+  }, [getRolik, match])
 
   if (deleted) {
     return <Redirect to="/" />
@@ -73,8 +73,8 @@ const VideoPage = props => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    props.rateVideo(
-      { rate: rating, feedback: feedback, videoId: id },
+    props.rateRolik(
+      { rate: rating, feedback: feedback, rolikId: id },
       props.user.token
     )
   }
@@ -85,7 +85,7 @@ const VideoPage = props => {
       <Grid container>
         <Grid item xs={6}>
           <CardMedia
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover",marginLeft:"50px", marginTop: "20px", width: "600px"  }}
             component="img"
             className={cardMedia}
             image={`${poster}`}
@@ -114,7 +114,7 @@ const VideoPage = props => {
                 >
                   <IconButton
                     onClick={() => {
-                      props.deleteVideo(props.user.token, id)
+                      props.deleteRolik(props.user.token, id)
                       setDeleted(true)
                     }}
                     className={classes.button}
@@ -152,7 +152,7 @@ const VideoPage = props => {
                   {title}
                 </Typography>
                 <StarRatings
-                  rating={props.currentVideo.rating}
+                  rating={props.currentRolik.rating}
                   starRatedColor="#F06624"
                   starDimension="20px"
                 />
@@ -203,6 +203,9 @@ const VideoPage = props => {
         </Grid>
       </Grid>
       <div style={{ width: "70%", margin: "auto" }}>
+      <Typography component="p" style={{ marginLeft:"200px", marginTop: "30px", marginBottom: "30px" }}>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0XungQDERk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</Typography>
         <Typography gutterBottom variant="h5" component="h5">
           Отзывы ({feedbacks ? feedbacks.data.length : ""})
         </Typography>
@@ -224,13 +227,13 @@ const VideoPage = props => {
   )
 }
 
-const mapStateToProps = ({ currentVideo, message, user }) => ({
-  currentVideo,
+const mapStateToProps = ({ currentRolik, message, user }) => ({
+  currentRolik,
   message,
   user
 })
 
 export default connect(
   mapStateToProps,
-  { getVideo, rateVideo, deleteVideo }
-)(withStyles(styles)(VideoPage))
+  { getRolik, rateRolik, deleteRolik }
+)(withStyles(styles)(RolikPage))
