@@ -27,7 +27,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
-    "express": "^4.16.4"
+    "express": "^4.17.3"
   },
   "dependencies": {
     "@types/http-errors": "^1.6.1",
